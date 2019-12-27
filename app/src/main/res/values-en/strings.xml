@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">YurtList</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="Login">Login</string>
+    <string name="Email">E-mail Address</string>
+    <string name="Password">Password</string>
+    <string name="Username">Username</string>
+    <string name="Register">Register</string>
+</resources>
