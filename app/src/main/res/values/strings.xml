@@ -2,5 +2,9 @@
     <string name="app_name">YurtList</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Login">Giriş</string>
+    <string name="Email">E-mail Adresi</string>
+    <string name="Password">Şifre</string>
+    <string name="Username">Kullanıcı Adı</string>
+    <string name="Register">Üye Ol</string>
 </resources>

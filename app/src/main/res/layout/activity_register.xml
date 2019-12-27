@@ -26,7 +26,7 @@
                 android:id="@+id/editTextUserName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Username"
+                android:hint="@string/Username"
                 android:inputType="textPersonName" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -41,7 +41,7 @@
                 android:id="@+id/editTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email"
+                android:hint="@string/Email"
                 android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -58,7 +58,7 @@
                 android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
+                android:hint="@string/Password"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -71,7 +71,7 @@
             android:layout_marginTop="16dp"
             android:layout_weight="1"
             android:background="#007bff"
-            android:text="Register" />
+            android:text="@string/Register" />
 
         <TextView
             android:id="@+id/textViewLogin"
@@ -80,7 +80,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:gravity="center"
-            android:text="Login"
+            android:text="@string/Login"
             android:textColor="@android:color/black" />
     </LinearLayout>
 </ScrollView>
