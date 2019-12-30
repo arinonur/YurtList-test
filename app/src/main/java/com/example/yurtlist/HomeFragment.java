@@ -30,10 +30,12 @@ public class HomeFragment extends Fragment {
     DormsHelper dormsHelper;
     private LinearLayoutManager linearLayoutManager;
     HomeAdapter dormListAdapter;
+    HomeAdapter dormListAdapter1;
     private SQLiteDatabase db;
     private Cursor cursor;
     RecyclerView recyclerView;
-    private ArrayList<Dorms> dorms=new ArrayList<>();
+    private ArrayList<Dorms> dorms_izmir=new ArrayList<>();
+    private ArrayList<Dorms> dorms_istanbul=new ArrayList<>();
 
     public HomeFragment() {
         // Required empty public constructor
@@ -47,22 +49,39 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.dorm_home);
+        RecyclerView recyclerView1 = (RecyclerView)view.findViewById(R.id.dorm_home_2);
         GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 1 ,GridLayoutManager.HORIZONTAL, false);
+        GridLayoutManager layoutManager1 = new GridLayoutManager(getActivity(), 1 ,GridLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
-
+        recyclerView1.setLayoutManager(layoutManager1);
+        recyclerView1.setHasFixedSize(true);
         dormsHelper = new DormsHelper(getContext());
-        dorms = dormsHelper.dormList();
+        dorms_izmir = dormsHelper.dormListIzmir();
+        dorms_istanbul = dormsHelper.dormListIstanbul();
 
-        dormListAdapter = new HomeAdapter(getContext(),dorms);
+        dormListAdapter = new HomeAdapter(getContext(),dorms_izmir);
+        dormListAdapter1 = new HomeAdapter(getContext(),dorms_istanbul);
         recyclerView.setVisibility(View.VISIBLE);
         recyclerView.setAdapter(dormListAdapter);
+        recyclerView1.setAdapter(dormListAdapter1);
 
         dormListAdapter.setListener(new DormListAdapter.Listener() {
             @Override
             public void onClick(int position) {
                 Intent intent = new Intent(getActivity(),
                         DormDetailActivity.class);
+                position = position + 1;
+                intent.putExtra(DormDetailActivity.EXTRA_DORMID, position);
+                startActivity(intent);
+            }
+        });
+        dormListAdapter1.setListener(new DormListAdapter.Listener() {
+            @Override
+            public void onClick(int position) {
+                Intent intent = new Intent(getContext(),
+                        DormDetailActivity.class);
+                position = position + 1;
                 intent.putExtra(DormDetailActivity.EXTRA_DORMID, position);
                 startActivity(intent);
             }

@@ -58,6 +58,7 @@ public class DormListFragment extends Fragment {
             public void onClick(int position) {
                 Intent intent = new Intent(getActivity(),
                         DormDetailActivity.class);
+                position = position + 1;
                 intent.putExtra(DormDetailActivity.EXTRA_DORMID, position);
                 startActivity(intent);
             }

@@ -9,19 +9,22 @@
     android:layout_margin="4dp"
     app:cardUseCompatPadding="true"
     android:layout_gravity="center">
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/image_dorm"
-        android:paddingRight="220dp"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_gravity="start">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    </ImageView>
-</LinearLayout>
+        <ImageView
+
+            android:id="@+id/image_dorm"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="start"
+            android:paddingRight="300dp">
+
+        </ImageView>
+    </LinearLayout>
 
 <LinearLayout
     android:layout_width="150dp"
@@ -38,7 +41,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="15sp"
-        android:textStyle="bold">
+        android:textStyle="bold"
+        >
 
     </TextView>
 
@@ -48,7 +52,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="10sp"
-        android:textStyle="bold">
+        android:textStyle="bold"
+        >
 
     </TextView>
 
