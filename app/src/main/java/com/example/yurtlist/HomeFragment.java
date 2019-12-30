@@ -62,9 +62,9 @@ public class HomeFragment extends Fragment {
 
         dormListAdapter = new HomeAdapter(getContext(),dorms_izmir);
         dormListAdapter1 = new HomeAdapter(getContext(),dorms_istanbul);
-        recyclerView.setVisibility(View.VISIBLE);
         recyclerView.setAdapter(dormListAdapter);
         recyclerView1.setAdapter(dormListAdapter1);
+
 
         dormListAdapter.setListener(new DormListAdapter.Listener() {
             @Override

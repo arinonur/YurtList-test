@@ -99,7 +99,7 @@ public class DormDetailActivity extends AppCompatActivity {
 
             }
         } catch (SQLiteException e) {
-            Toast toast = Toast.makeText(this, "Database unavailable", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this, "Error occured! Please try again", Toast.LENGTH_SHORT);
             toast.show();
         }
 
