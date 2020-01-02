@@ -8,6 +8,14 @@
     <string name="Register">Register</string>
     <string name="chooser_title">Find your dream dorm with Yurtlist!</string>
     <string name="welcome">Welcome to Yurtlist!</string>
+    <string name="home">Home</string>
+    <string name="dorms">Dorms</string>
+    <string name="profile">Profile</string>
+    <string name="turkish">Turkish</string>
+    <string name="english">English</string>
+    <string name="dorms_izmir">Dorms in Izmir</string>
+    <string name="dorms_istanbul">Dorms in Istanbul</string>
+    <string name="dorms_ankara">Dorms in Ankara</string>
 
 
 </resources>

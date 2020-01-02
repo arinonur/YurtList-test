@@ -8,6 +8,14 @@
     <string name="Register">Üye Ol</string>
     <string name="chooser_title">Hayalindeki yurdu Yurtlist uygulaması ile bul!</string>
     <string name="welcome">Yurtlist e Hoşgeldiniz!</string>
+    <string name="home">Ana Sayfa</string>
+    <string name="dorms">Yurtlar</string>
+    <string name="profile">Profil</string>
+    <string name="turkish">Türkçe</string>
+    <string name="english">İngilizce</string>
+    <string name="dorms_izmir">İzmir Yurtları</string>
+    <string name="dorms_istanbul">İstanbul Yurtları</string>
+    <string name="dorms_ankara">Ankara Yurtları</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment 1</string>

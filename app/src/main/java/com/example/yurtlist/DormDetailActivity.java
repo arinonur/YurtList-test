@@ -31,10 +31,7 @@ import java.util.Locale;
 
 public class DormDetailActivity extends AppCompatActivity {
     public static final String EXTRA_DORMID = "dormId";
-    PagerAdapter pageAdapter;
-    TabItem tabChats;
-    TabItem tabStatus;
-    TabItem tabCalls;
+
     String sms = "Hayalindeki yurdu Yurtlist uygulaması ile bul!";
 
 
@@ -48,15 +45,6 @@ public class DormDetailActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         int dormId = (Integer) getIntent().getExtras().get(EXTRA_DORMID);
 
-
-        final ViewPager pager = (ViewPager) findViewById(R.id.pager);
-        final TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(pager);
-        tabChats = findViewById(R.id.tabChats);
-        tabStatus = findViewById(R.id.tabStatus);
-        tabCalls = findViewById(R.id.tabCalls);
-
-        pageAdapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         FloatingActionButton fab = findViewById(R.id.floating_action_button);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,12 +75,12 @@ public class DormDetailActivity extends AppCompatActivity {
                 String provinceText = cursor.getString(2);
 
 
-//                TextView name = (TextView)findViewById(R.id.dorm_detail_name);
-////                name.setText(nameText);
-////
-////                TextView description = (TextView)findViewById(R.id.dorm_detail_province);
-////                description.setText(provinceText);
-////
+                TextView name = (TextView)findViewById(R.id.dorm_detail_name);
+                name.setText(nameText);
+
+                TextView description = (TextView)findViewById(R.id.dorm_detail_province);
+                description.setText(provinceText);
+
                 ImageView photo = (ImageView) findViewById(R.id.dorm_image);
                 photo.setImageResource(photoId);
 

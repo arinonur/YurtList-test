@@ -3,19 +3,19 @@
     <item
         android:id="@+id/nav_home"
         android:icon="@drawable/home"
-        android:title="Anasayfa">
+        android:title="@string/home">
 
     </item>
     <item
         android:id="@+id/nav_dorm_list"
         android:icon="@drawable/dorm_list"
-        android:title="Yurtlar">
+        android:title="@string/dorms">
 
     </item>
     <item
         android:id="@+id/nav_profile"
         android:icon="@drawable/profile"
-        android:title="Profil">
+        android:title="@string/profile">
 
     </item>
 
