@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.yurtlist.DormsAnkara;
 import com.example.yurtlist.DormsIstanbul;
 import com.example.yurtlist.R;
 
@@ -31,7 +32,12 @@ public class DormsHelperIstanbul extends SQLiteOpenHelper {
                 + "PROVINCE TEXT, "
                 + "IMAGE_RESOURCE_ID INTEGER);");
 
-        insertDorm(db, "test", "Istanbul", R.drawable.yasar);
+        insertDorm(db, "Esenyurt İstasyon Kız Öğrenci Yurdu", "Istanbul", R.drawable.esenyurt);
+        insertDorm(db, "Bağcılar Eda Kız Öğrenci Yurdu", "Istanbul", R.drawable.bagcilar);
+        insertDorm(db, "Eyüp Studio Santral Öğrenci Yurdu", "Istanbul", R.drawable.eyup);
+        insertDorm(db, "Zeytinburnu Novu Öğrenci Rezidansı", "Istanbul", R.drawable.zeytinburnu);
+        insertDorm(db, "Kadıköy Yıldız Kız Öğrenci Yurdu\n", "Istanbul", R.drawable.kadikoy);
+        insertDorm(db, "Dormia İstanbul Kız Öğrenci Yurdu", "Istanbul", R.drawable.dormia);
     }
 
     @Override

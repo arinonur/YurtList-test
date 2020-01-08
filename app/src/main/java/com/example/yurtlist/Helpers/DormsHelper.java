@@ -33,20 +33,23 @@ public class DormsHelper extends SQLiteOpenHelper {
         insertDorm(db, "Kılıçoğlu Öğrenci Yurdu", "Izmir", R.drawable.kilicoglu);
         insertDorm(db, "Egeyurt Kız Öğrenci Yurdu", "Izmir",
                 R.drawable.egeyurt);
-        insertDorm(db, "Yaşar Üniversitesi Öğrenci Yurdu", "Izmir", R.drawable.yasar);
-        insertDorm(db, "Yaşar Üniversitesi Öğrenci Yurdu", "Izmir", R.drawable.yasar);
-        insertDorm(db, "Yaşar Üniversitesi Öğrenci Yurdu", "Izmir", R.drawable.yasar);
-        insertDorm(db, "Yaşar Üniversitesi Öğrenci Yurdu", "Izmir", R.drawable.yasar);
-        insertDorm(db, "Yaşar Üniversitesi Öğrenci Yurdu", "Izmir", R.drawable.yasar);
-        insertDorm(db, "Yaşar Üniversitesi Öğrenci Yurdu", "Izmir", R.drawable.yasar);
-        insertDorm(db, "Yaşar Üniversitesi Öğrenci Yurdu", "Izmir", R.drawable.yasar);
-        insertDorm(db, "Yaşar Üniversitesi Öğrenci Yurdu", "Izmir", R.drawable.yasar);
-        insertDorm(db, "Yaşar Üniversitesi Öğrenci Yurdu", "Izmir", R.drawable.yasar);
-        insertDorm(db, "Yaşar Üniversitesi Öğrenci Yurdu", "Izmir", R.drawable.yasar);
-        insertDorm(db, "Yaşar Üniversitesi Öğrenci Yurdu", "Izmir", R.drawable.yasar);
-        insertDorm(db, "Yaşar Üniversitesi Öğrenci Yurdu", "Izmir", R.drawable.yasar);
-        insertDorm(db, "Yaşar Üniversitesi Öğrenci Yurdu", "Izmir", R.drawable.yasar);
-        insertDorm(db, "test", "Istanbul", R.drawable.yasar);
+        insertDorm(db, "Ilgaz Öğrenci Yurdu", "Izmir", R.drawable.ilgaz);
+        insertDorm(db, "Palmira Rezidans Kız Öğrenci Yurdu", "Izmir", R.drawable.palmira);
+        insertDorm(db, "İYTE Yaşam Merkezi", "Izmir", R.drawable.iyte);
+        insertDorm(db, "Yükseliş Öğrenci Yurdu", "Izmir", R.drawable.yukselis);
+        insertDorm(db, "Özel Ulu Çınar Erkek Öğrenci Yurdu", "Ankara", R.drawable.cinar);
+        insertDorm(db, "Çaba Kız Öğrenci Yurdu", "Ankara", R.drawable.caba);
+        insertDorm(db, "Fırat Yüksek Öğrenim Erkek Öğrenci Yurdu", "Ankara", R.drawable.firat);
+        insertDorm(db, "Akköprü Erkek Öğrenci Yurdu", "Ankara", R.drawable.akkopru);
+        insertDorm(db, "Koç Yaşam Kız Öğrenci Yurdu", "Ankara", R.drawable.koc);
+        insertDorm(db, "Özel Başkent Erkek Öğrenci Yurdu", "Ankara", R.drawable.baskent);
+        insertDorm(db, "Esenyurt İstasyon Kız Öğrenci Yurdu", "Istanbul", R.drawable.esenyurt);
+        insertDorm(db, "Bağcılar Eda Kız Öğrenci Yurdu", "Istanbul", R.drawable.bagcilar);
+        insertDorm(db, "Eyüp Studio Santral Öğrenci Yurdu", "Istanbul", R.drawable.eyup);
+        insertDorm(db, "Zeytinburnu Novu Öğrenci Rezidansı", "Istanbul", R.drawable.zeytinburnu);
+        insertDorm(db, "Kadıköy Yıldız Kız Öğrenci Yurdu\n", "Istanbul", R.drawable.kadikoy);
+        insertDorm(db, "Dormia İstanbul Kız Öğrenci Yurdu", "Istanbul", R.drawable.dormia);
+
     }
 
     @Override

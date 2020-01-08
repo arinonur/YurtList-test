@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.yurtlist.Dorms;
+import com.example.yurtlist.DormsAnkara;
 import com.example.yurtlist.DormsIstanbul;
 import com.example.yurtlist.R;
 
@@ -32,7 +33,13 @@ public class DormsHelperAnkara extends SQLiteOpenHelper {
                 + "PROVINCE TEXT, "
                 + "IMAGE_RESOURCE_ID INTEGER);");
 
-        insertDorm(db, "test", "Istanbul", R.drawable.yasar);
+        insertDorm(db, "Özel Ulu Çınar Erkek Öğrenci Yurdu", "Ankara", R.drawable.cinar);
+        insertDorm(db, "Çaba Kız Öğrenci Yurdu", "Ankara", R.drawable.caba);
+        insertDorm(db, "Fırat Yüksek Öğrenim Erkek Öğrenci Yurdu", "Ankara", R.drawable.firat);
+        insertDorm(db, "Akköprü Erkek Öğrenci Yurdu", "Ankara", R.drawable.akkopru);
+        insertDorm(db, "Koç Yaşam Kız Öğrenci Yurdu", "Ankara", R.drawable.koc);
+        insertDorm(db, "Özel Başkent Erkek Öğrenci Yurdu", "Ankara", R.drawable.baskent);
+
     }
 
     @Override
@@ -48,11 +55,11 @@ public class DormsHelperAnkara extends SQLiteOpenHelper {
         db.insert("DORM_ANKARA", null, dormValues);
     }
 
-    public ArrayList<Dorms> dormListAnkara() {
+    public ArrayList<DormsAnkara> dormListAnkara() {
         String query;
         query = "SELECT  * FROM DORM_ANKARA" ;
         SQLiteDatabase db = this.getReadableDatabase();
-        ArrayList<Dorms> personLinkedList = new ArrayList<Dorms>();
+        ArrayList<DormsAnkara> personLinkedList = new ArrayList<DormsAnkara>();
 
         Cursor cursor = db.rawQuery(query, null);
 
@@ -61,7 +68,7 @@ public class DormsHelperAnkara extends SQLiteOpenHelper {
                 String name = cursor.getString(1);
                 String province = cursor.getString(2);
                 int img_resource_id = Integer.parseInt(cursor.getString(3));
-                personLinkedList.add(new Dorms(name,province,img_resource_id));
+                personLinkedList.add(new DormsAnkara(name,province,img_resource_id));
             } while (cursor.moveToNext());
         }
         cursor.close();

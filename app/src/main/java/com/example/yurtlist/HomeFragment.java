@@ -26,8 +26,10 @@ import android.widget.Toast;
 
 import com.example.yurtlist.Adapters.DormListAdapter;
 import com.example.yurtlist.Adapters.HomeAdapter;
+import com.example.yurtlist.Adapters.HomeAnkaraAdapter;
 import com.example.yurtlist.Adapters.HomeIstanbulAdapter;
 import com.example.yurtlist.Helpers.DormsHelper;
+import com.example.yurtlist.Helpers.DormsHelperAnkara;
 import com.example.yurtlist.Helpers.DormsHelperIstanbul;
 
 import java.util.ArrayList;
@@ -41,15 +43,16 @@ public class HomeFragment extends Fragment {
     ActionBar actionBar;
     DormsHelper dormsHelper;
     DormsHelperIstanbul dormsHelperIstanbul;
+    DormsHelperAnkara dormsHelperAnkara;
     private LinearLayoutManager linearLayoutManager;
     HomeAdapter dormListAdapter;
     HomeIstanbulAdapter dormListAdapter1;
-    HomeAdapter dormListAdapter2;
+    HomeAnkaraAdapter dormListAdapter2;
     private SQLiteDatabase db;
     private Cursor cursor;
     private ArrayList<Dorms> dorms_izmir = new ArrayList<>();
     private ArrayList<DormsIstanbul> dorms_istanbul = new ArrayList<>();
-    private ArrayList<Dorms> dorms_ankara = new ArrayList<>();
+    private ArrayList<DormsAnkara> dorms_ankara = new ArrayList<>();
 
     public HomeFragment() {
         // Required empty public constructor
@@ -77,13 +80,14 @@ public class HomeFragment extends Fragment {
         recyclerView2.setHasFixedSize(true);
         dormsHelper = new DormsHelper(getContext());
         dormsHelperIstanbul = new DormsHelperIstanbul(getContext());
+        dormsHelperAnkara = new DormsHelperAnkara(getContext());
         dorms_izmir = dormsHelper.dormListIzmir();
         dorms_istanbul = dormsHelperIstanbul.dormListIstanbul();
-        dorms_ankara = dormsHelper.dormListIzmir();
+        dorms_ankara = dormsHelperAnkara.dormListAnkara();
 
         dormListAdapter = new HomeAdapter(getContext(), dorms_izmir);
         dormListAdapter1 = new HomeIstanbulAdapter(getContext(), dorms_istanbul);
-        dormListAdapter2 = new HomeAdapter(getContext(), dorms_ankara);
+        dormListAdapter2 = new HomeAnkaraAdapter(getContext(), dorms_ankara);
         recyclerView.setAdapter(dormListAdapter);
         recyclerView1.setAdapter(dormListAdapter1);
         recyclerView2.setAdapter(dormListAdapter2);
@@ -109,16 +113,17 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        dormListAdapter2.setListener(new DormListAdapter.Listener() {
+        dormListAdapter2.setListener(new HomeAnkaraAdapter.Listener() {
             @Override
             public void onClick(int position) {
                 Intent intent = new Intent(getContext(),
-                        DormDetailActivity.class);
+                        DormDetailIstanbul.class);
                 position = position + 1;
-                intent.putExtra(DormDetailActivity.EXTRA_DORMID, position);
+                intent.putExtra(DormDetailIstanbul.EXTRA_DORMID_IST, position);
                 startActivity(intent);
             }
         });
+
 
         return view;
     }
