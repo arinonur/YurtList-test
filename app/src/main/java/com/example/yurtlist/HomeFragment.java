@@ -117,9 +117,9 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(int position) {
                 Intent intent = new Intent(getContext(),
-                        DormDetailIstanbul.class);
+                        DormDetailAnkara.class);
                 position = position + 1;
-                intent.putExtra(DormDetailIstanbul.EXTRA_DORMID_IST, position);
+                intent.putExtra(DormDetailAnkara.EXTRA_DORMID_ANK, position);
                 startActivity(intent);
             }
         });

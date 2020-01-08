@@ -29,13 +29,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.yurtlist.Helpers.DormsHelper;
-import com.example.yurtlist.Helpers.DormsHelperIstanbul;
+import com.example.yurtlist.Helpers.DormsHelperAnkara;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Locale;
 
 public class DormDetailAnkara extends AppCompatActivity {
-    public static final String EXTRA_DORMID_IST = "dormId";
+    public static final String EXTRA_DORMID_ANK = "dormId";
     public static final String NOTIFICATION_CHANNEL_ID = "10001" ;
     private final static String default_notification_channel_id = "default" ;
 
@@ -50,7 +50,7 @@ public class DormDetailAnkara extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        int dormId = (Integer) getIntent().getExtras().get(EXTRA_DORMID_IST);
+        int dormId = (Integer) getIntent().getExtras().get(EXTRA_DORMID_ANK);
 
         FloatingActionButton fab = findViewById(R.id.floating_action_button);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +64,7 @@ public class DormDetailAnkara extends AppCompatActivity {
         });
 
         //Create a cursor
-        SQLiteOpenHelper dormsHelper = new DormsHelperIstanbul(this);
+        SQLiteOpenHelper dormsHelper = new DormsHelperAnkara(this);
 
         try {
             SQLiteDatabase db = dormsHelper.getReadableDatabase();
