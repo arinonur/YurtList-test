@@ -16,6 +16,9 @@
     <string name="dorms_izmir">İzmir Yurtları</string>
     <string name="dorms_istanbul">İstanbul Yurtları</string>
     <string name="dorms_ankara">Ankara Yurtları</string>
+    <string name="dorm_name">Yurt İsmi</string>
+    <string name="dorms_province">Bulunduğu Şehir</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment 1</string>

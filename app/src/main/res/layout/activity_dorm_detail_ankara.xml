@@ -17,7 +17,7 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
-                android:id="@+id/dorm_image"
+                android:id="@+id/dorm_image_ankara"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
@@ -55,7 +55,7 @@
                 android:textSize="30sp"
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="32dp"
-                android:id="@+id/dorm_detail_name"
+                android:id="@+id/dorm_detail_name_ankara"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
@@ -74,7 +74,7 @@
             <TextView
                 android:textSize="30sp"
                 android:layout_marginTop="32dp"
-                android:id="@+id/dorm_detail_province"
+                android:id="@+id/dorm_detail_province_ankara"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -87,7 +87,7 @@
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floating_action_button"
+        android:id="@+id/floating_action_button2"
         style="@style/Widget.Design.FloatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

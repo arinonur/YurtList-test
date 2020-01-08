@@ -16,6 +16,10 @@
     <string name="dorms_izmir">Dorms in Izmir</string>
     <string name="dorms_istanbul">Dorms in Istanbul</string>
     <string name="dorms_ankara">Dorms in Ankara</string>
+    <string name="dorm_name">Name of Dorm</string>
+    <string name="dorms_province">Province</string>
+
+
 
 
 </resources>

@@ -63,7 +63,6 @@ public class DormsHelper extends SQLiteOpenHelper {
     }
     public ArrayList<Dorms> dormList() {
         String query;
-        //regular query
         query = "SELECT * FROM DORM" ;
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList<Dorms> personLinkedList = new ArrayList<Dorms>();
@@ -86,21 +85,19 @@ public class DormsHelper extends SQLiteOpenHelper {
 
     public ArrayList<Dorms> dormListIzmir() {
         String query;
-        //regular query
-        query = "SELECT  NAME,PROVINCE,IMAGE_RESOURCE_ID FROM DORM WHERE PROVINCE like 'Izmir'" ;
+        query = "SELECT * FROM DORM WHERE PROVINCE like 'Izmir'" ;
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList<Dorms> personLinkedList = new ArrayList<Dorms>();
 
         Cursor cursor = db.rawQuery(query, null);
 
         if (cursor.moveToFirst()) {
-            while(!cursor.isAfterLast()){
-                String name = cursor.getString(0);
-                String province = cursor.getString(1);
-                int img_resource_id = Integer.parseInt(cursor.getString(2));
+            do {
+                String name = cursor.getString(1);
+                String province = cursor.getString(2);
+                int img_resource_id = Integer.parseInt(cursor.getString(3));
                 personLinkedList.add(new Dorms(name,province,img_resource_id));
-                cursor.moveToNext();
-            }
+            } while (cursor.moveToNext());
         }
         cursor.close();
 
@@ -109,7 +106,6 @@ public class DormsHelper extends SQLiteOpenHelper {
     }
     public ArrayList<Dorms> dormListIstanbul() {
         String query;
-        //regular query
         query = "SELECT  * FROM DORM WHERE PROVINCE like 'Istanbul'" ;
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList<Dorms> personLinkedList = new ArrayList<Dorms>();

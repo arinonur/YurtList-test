@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -27,7 +26,9 @@ import android.widget.Toast;
 
 import com.example.yurtlist.Adapters.DormListAdapter;
 import com.example.yurtlist.Adapters.HomeAdapter;
+import com.example.yurtlist.Adapters.HomeIstanbulAdapter;
 import com.example.yurtlist.Helpers.DormsHelper;
+import com.example.yurtlist.Helpers.DormsHelperIstanbul;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -39,15 +40,15 @@ import java.util.Locale;
 public class HomeFragment extends Fragment {
     ActionBar actionBar;
     DormsHelper dormsHelper;
+    DormsHelperIstanbul dormsHelperIstanbul;
     private LinearLayoutManager linearLayoutManager;
     HomeAdapter dormListAdapter;
-    HomeAdapter dormListAdapter1;
+    HomeIstanbulAdapter dormListAdapter1;
     HomeAdapter dormListAdapter2;
     private SQLiteDatabase db;
     private Cursor cursor;
-    RecyclerView recyclerView;
     private ArrayList<Dorms> dorms_izmir = new ArrayList<>();
-    private ArrayList<Dorms> dorms_istanbul = new ArrayList<>();
+    private ArrayList<DormsIstanbul> dorms_istanbul = new ArrayList<>();
     private ArrayList<Dorms> dorms_ankara = new ArrayList<>();
 
     public HomeFragment() {
@@ -75,12 +76,13 @@ public class HomeFragment extends Fragment {
         recyclerView2.setLayoutManager(layoutManager2);
         recyclerView2.setHasFixedSize(true);
         dormsHelper = new DormsHelper(getContext());
+        dormsHelperIstanbul = new DormsHelperIstanbul(getContext());
         dorms_izmir = dormsHelper.dormListIzmir();
-        dorms_istanbul = dormsHelper.dormListIstanbul();
+        dorms_istanbul = dormsHelperIstanbul.dormListIstanbul();
         dorms_ankara = dormsHelper.dormListIzmir();
 
         dormListAdapter = new HomeAdapter(getContext(), dorms_izmir);
-        dormListAdapter1 = new HomeAdapter(getContext(), dorms_istanbul);
+        dormListAdapter1 = new HomeIstanbulAdapter(getContext(), dorms_istanbul);
         dormListAdapter2 = new HomeAdapter(getContext(), dorms_ankara);
         recyclerView.setAdapter(dormListAdapter);
         recyclerView1.setAdapter(dormListAdapter1);
@@ -97,13 +99,13 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        dormListAdapter1.setListener(new DormListAdapter.Listener() {
+        dormListAdapter1.setListener(new HomeIstanbulAdapter.Listener() {
             @Override
             public void onClick(int position) {
                 Intent intent = new Intent(getContext(),
-                        DormDetailActivity.class);
+                        DormDetailIstanbul.class);
                 position = position + 1;
-                intent.putExtra(DormDetailActivity.EXTRA_DORMID, position);
+                intent.putExtra(DormDetailIstanbul.EXTRA_DORMID_IST, position);
                 startActivity(intent);
             }
         });
@@ -140,7 +142,7 @@ public class HomeFragment extends Fragment {
                         getActivity().getBaseContext().getResources().getDisplayMetrics());
                 Intent intent = new Intent(getActivity(), MainActivity.class);
                 startActivity(intent);
-                Toast.makeText(getActivity(), "Dil Türkçeye çevrildi", Toast.LENGTH_SHORT).show();
+
                 return true;
             case R.id.english:
                 Locale locale_en = new Locale("en"); // where 'hi' is Language code, set this as per your Spinner Item selected

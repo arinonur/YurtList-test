@@ -29,12 +29,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.yurtlist.Helpers.DormsHelper;
+import com.example.yurtlist.Helpers.DormsHelperIstanbul;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Locale;
 
-public class DormDetailActivity extends AppCompatActivity {
-    public static final String EXTRA_DORMID = "dormId";
+public class DormDetailAnkara extends AppCompatActivity {
+    public static final String EXTRA_DORMID_IST = "dormId";
     public static final String NOTIFICATION_CHANNEL_ID = "10001" ;
     private final static String default_notification_channel_id = "default" ;
 
@@ -49,7 +50,7 @@ public class DormDetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        int dormId = (Integer) getIntent().getExtras().get(EXTRA_DORMID);
+        int dormId = (Integer) getIntent().getExtras().get(EXTRA_DORMID_IST);
 
         FloatingActionButton fab = findViewById(R.id.floating_action_button);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -63,12 +64,12 @@ public class DormDetailActivity extends AppCompatActivity {
         });
 
         //Create a cursor
-        SQLiteOpenHelper dormsHelper = new DormsHelper(this);
+        SQLiteOpenHelper dormsHelper = new DormsHelperIstanbul(this);
 
         try {
             SQLiteDatabase db = dormsHelper.getReadableDatabase();
 
-            Cursor cursor = db.query("DORM",
+            Cursor cursor = db.query("DORM_ANKARA",
                     new String[]{"NAME", "IMAGE_RESOURCE_ID", "PROVINCE"},
                     "_id = ?",
                     new String[]{Integer.toString(dormId)},
@@ -124,7 +125,7 @@ public class DormDetailActivity extends AppCompatActivity {
                         getBaseContext().getResources().getDisplayMetrics());
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
-                scheduleNotification(getNotification( "Dil Türkçeye çevrildi!" ) , 1000 ) ;
+                scheduleNotification(getNotification( "Dil Türkçeye çevrildi!" ) , 100 ) ;
 
                 return true;
             case R.id.english:
@@ -169,8 +170,8 @@ public class DormDetailActivity extends AppCompatActivity {
             String[] permission_list = new String[1];
             permission_list[0] = permission;
             ActivityCompat.requestPermissions(this, permission_list, 1);
-        }
 
+        }
         else if(grant == PackageManager.PERMISSION_GRANTED){
             Intent sendIntent = new Intent(Intent.ACTION_VIEW);
             sendIntent.setData(Uri.parse("sms:"));
