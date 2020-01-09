@@ -6,14 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.yurtlist.Dorms;
 import com.example.yurtlist.DormsAnkara;
-import com.example.yurtlist.DormsIstanbul;
 import com.example.yurtlist.R;
-
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
 
 public class DormsHelperAnkara extends SQLiteOpenHelper {
@@ -57,7 +52,7 @@ public class DormsHelperAnkara extends SQLiteOpenHelper {
 
     public ArrayList<DormsAnkara> dormListAnkara() {
         String query;
-        query = "SELECT  * FROM DORM_ANKARA" ;
+        query = "SELECT  * FROM DORM_ANKARA";
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList<DormsAnkara> personLinkedList = new ArrayList<DormsAnkara>();
 
@@ -68,7 +63,7 @@ public class DormsHelperAnkara extends SQLiteOpenHelper {
                 String name = cursor.getString(1);
                 String province = cursor.getString(2);
                 int img_resource_id = Integer.parseInt(cursor.getString(3));
-                personLinkedList.add(new DormsAnkara(name,province,img_resource_id));
+                personLinkedList.add(new DormsAnkara(name, province, img_resource_id));
             } while (cursor.moveToNext());
         }
         cursor.close();

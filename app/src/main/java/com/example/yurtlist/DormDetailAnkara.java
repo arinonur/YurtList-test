@@ -28,7 +28,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.yurtlist.Helpers.DormsHelper;
 import com.example.yurtlist.Helpers.DormsHelperAnkara;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -63,7 +62,6 @@ public class DormDetailAnkara extends AppCompatActivity {
             }
         });
 
-        //Create a cursor
         SQLiteOpenHelper dormsHelper = new DormsHelperAnkara(this);
 
         try {
@@ -104,7 +102,6 @@ public class DormDetailAnkara extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.actionbar, menu);
         return true;
     }

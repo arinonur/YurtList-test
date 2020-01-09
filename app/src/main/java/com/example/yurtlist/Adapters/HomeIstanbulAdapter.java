@@ -11,9 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.yurtlist.Dorms;
 import com.example.yurtlist.DormsIstanbul;
-import com.example.yurtlist.Helpers.DormsHelper;
 import com.example.yurtlist.Helpers.DormsHelperIstanbul;
 import com.example.yurtlist.R;
 

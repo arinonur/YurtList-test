@@ -5,6 +5,8 @@
     <string name="Email">E-mail Adresi</string>
     <string name="Password">Şifre</string>
     <string name="Username">Kullanıcı Adı</string>
+    <string name="Enter">Giriş Yap</string>
+    <string name="Enter_long">Giriş yapmanız gerekmektedir.</string>
     <string name="Register">Üye Ol</string>
     <string name="chooser_title">Hayalindeki yurdu Yurtlist uygulaması ile bul!</string>
     <string name="welcome">Yurtlist e Hoşgeldiniz!</string>

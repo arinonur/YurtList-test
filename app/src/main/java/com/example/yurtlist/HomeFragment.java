@@ -62,7 +62,6 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar_home);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
@@ -150,7 +149,7 @@ public class HomeFragment extends Fragment {
 
                 return true;
             case R.id.english:
-                Locale locale_en = new Locale("en"); // where 'hi' is Language code, set this as per your Spinner Item selected
+                Locale locale_en = new Locale("en");
                 Locale.setDefault(locale_en);
                 Configuration config_en = getActivity().getBaseContext().getResources().getConfiguration();
                 config_en.locale = locale_en;

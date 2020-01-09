@@ -62,7 +62,6 @@ public class DormDetailActivity extends AppCompatActivity {
             }
         });
 
-        //Create a cursor
         SQLiteOpenHelper dormsHelper = new DormsHelper(this);
 
         try {
@@ -103,7 +102,6 @@ public class DormDetailActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.actionbar, menu);
         return true;
     }

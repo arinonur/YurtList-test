@@ -6,13 +6,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.yurtlist.DormsAnkara;
 import com.example.yurtlist.DormsIstanbul;
 import com.example.yurtlist.R;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+
 
 
 public class DormsHelperIstanbul extends SQLiteOpenHelper {

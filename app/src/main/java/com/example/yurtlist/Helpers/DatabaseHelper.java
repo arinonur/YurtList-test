@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
 
 import com.example.yurtlist.User;
 
@@ -68,10 +67,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public User Authenticate(User user) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query(TABLE_USERS,// Selecting Table
-                new String[]{KEY_ID, KEY_USER_NAME, KEY_EMAIL, KEY_PASSWORD},//Selecting columns want to query
+        Cursor cursor = db.query(TABLE_USERS,
+                new String[]{KEY_ID, KEY_USER_NAME, KEY_EMAIL, KEY_PASSWORD},
                 KEY_EMAIL + "=?",
-                new String[]{user.email},//Where clause
+                new String[]{user.email},
                 null, null, null);
 
         if (cursor != null && cursor.moveToFirst()&& cursor.getCount()>0) {
@@ -87,10 +86,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public boolean isEmailExists(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query(TABLE_USERS,// Selecting Table
+        Cursor cursor = db.query(TABLE_USERS,
                 new String[]{KEY_ID, KEY_USER_NAME, KEY_EMAIL, KEY_PASSWORD},
                 KEY_EMAIL + "=?",
-                new String[]{email},//Where clause
+                new String[]{email},
                 null, null, null);
 
         if (cursor != null && cursor.moveToFirst()&& cursor.getCount()>0) {

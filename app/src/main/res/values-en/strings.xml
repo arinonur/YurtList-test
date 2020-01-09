@@ -5,6 +5,8 @@
     <string name="Email">E-mail Address</string>
     <string name="Password">Password</string>
     <string name="Username">Username</string>
+    <string name="Enter">Login</string>
+    <string name="Enter_long">You have to login.</string>
     <string name="Register">Register</string>
     <string name="chooser_title">Find your dream dorm with Yurtlist!</string>
     <string name="welcome">Welcome to Yurtlist!</string>
